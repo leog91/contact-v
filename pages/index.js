@@ -48,61 +48,67 @@ export default function Home() {
       </Head>
 
       <main>
-        <Center bg={"blackAlpha.800"}>
-          <Text
-            fontSize={"4xl"}
-            fontWeight={"extrabold"}
-            color={"white"}
-            m={"5px"}
-          >
-            {" "}
-            Contacts-V{" "}
-          </Text>
-        </Center>
-        <Tabs
-          tabs={tabs}
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-        />
-
-        <Center m={"5px"}>
-          <Button
-            onClick={() => {
-              setSelectedTab(null);
-              setSelectedContact(null);
-            }}
-            bg={"blackAlpha.800"}
-            colorScheme={"blackAlpha"}
-          >
-            Clear Selection
-          </Button>
-        </Center>
-        <Center>
-          <Flex>
-            <Box m={"10px"} mt={"35px"} w={"180px"} bg={"whiteAlpha.50"}>
-              <ContactList
-                filtered={filtered}
-                selectedContact={selectedContact}
-                setSelectedContact={setSelectedContact}
+        <Box bg={""}>
+          <Center width={"full"} bg={"blackAlpha.800"}>
+            <Text
+              fontSize={"4xl"}
+              fontWeight={"extrabold"}
+              color={"white"}
+              m={"5px"}
+            >
+              {" "}
+              Contacts-V{" "}
+            </Text>
+          </Center>
+          <Center mt={"15px"}>
+            <Button
+              onClick={() => {
+                setSelectedTab(null);
+                setSelectedContact(null);
+              }}
+              bg={"blackAlpha.800"}
+              colorScheme={"blackAlpha"}
+            >
+              Clear Selection
+            </Button>
+          </Center>
+          <Center>
+            <Flex>
+              <Tabs
+                tabs={tabs}
+                selectedTab={selectedTab}
+                setSelectedTab={setSelectedTab}
               />
-            </Box>
-            <Box m={"10px"}>
-              {selectedContact ? (
-                <Contact
-                  contact={selectedContact}
-                  setSelectedContact={setSelectedContact}
-                />
-              ) : (
-                <Box bg={"whiteAlpha.100"} w={"320px"} h={"654px"}></Box>
-              )}
-            </Box>
-          </Flex>
-        </Center>
-        <Center bg="blackAlpha.800" w={"100%"} h={"50px"}>
-          <Text fontWeight={"semibold"} color={"white"}>
-            NL
-          </Text>
-        </Center>
+
+              <Box>
+                <Flex>
+                  <Box m={"10px"} mt={"35px"} w={"180px"} bg={"whiteAlpha.50"}>
+                    <ContactList
+                      filtered={filtered}
+                      selectedContact={selectedContact}
+                      setSelectedContact={setSelectedContact}
+                    />
+                  </Box>
+                  <Box m={"10px"}>
+                    {selectedContact ? (
+                      <Contact
+                        contact={selectedContact}
+                        setSelectedContact={setSelectedContact}
+                      />
+                    ) : (
+                      <Box bg={"whiteAlpha.100"} w={"320px"} h={"654px"}></Box>
+                    )}
+                  </Box>
+                </Flex>
+              </Box>
+            </Flex>
+          </Center>
+          <Center bg="blackAlpha.800" w={"100%"} h={"50px"}>
+            <Text fontWeight={"semibold"} color={"white"}>
+              NL
+            </Text>
+          </Center>
+        </Box>
       </main>
     </div>
   );

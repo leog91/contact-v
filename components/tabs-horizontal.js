@@ -3,8 +3,8 @@ import { Center, Box, Flex } from "@chakra-ui/react";
 
 export const Tabs = ({ tabs, selectedTab, setSelectedTab }) => {
   return (
-    <Box>
-      <Flex direction={"column"} m={"10px"}>
+    <Center>
+      <Flex m={"10px"}>
         {" "}
         {tabs.map((t) => (
           <Box
@@ -23,6 +23,6 @@ export const Tabs = ({ tabs, selectedTab, setSelectedTab }) => {
           </Box>
         ))}{" "}
       </Flex>
-    </Box>
+    </Center>
   );
 };
